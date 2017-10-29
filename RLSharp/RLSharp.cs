@@ -87,6 +87,7 @@ namespace RLSharp
         /// Finally <see cref="controller"/> is fed to the game. </remarks>
         public void UpdateBot()
         {
+            // Create objects to read from DLL through a memory mapped file
             MemoryMappedFile mmf = MemoryMappedFile.OpenExisting("Local\\RLBot");
             MemoryMappedViewStream stream = mmf.CreateViewStream(0, 2004);
 
@@ -95,6 +96,7 @@ namespace RLSharp
             BinaryReader binReader = new BinaryReader(stream);
             dllLock = BitConverter.ToUInt16(binReader.ReadBytes(4), 0);
 
+            // Read from DLL if a refresh is not in progress
             if (dllLock != 1)
             {
                 stream.Position = 4;
@@ -103,8 +105,10 @@ namespace RLSharp
                 handle.Free();
             }
 
+            // Run bot logic once
             Update();
 
+            // Update outputs fed to game from controller struct
             joystick.AcquireVJD(controllerID);
             controllerState.AxisX = controller.stickX;
             controllerState.AxisY = controller.stickY;
