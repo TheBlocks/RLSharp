@@ -129,19 +129,5 @@ namespace RLSharp
                 System.Threading.Thread.Sleep(15);
             }
         }
-
-        /// <summary>
-        /// Struct that holds all the output information to be fed to the game.
-        /// </summary>
-        public struct Controller
-        {
-            public int stickX;
-            public int stickY;
-            public bool jump;
-            public bool powerslide;
-            public bool boost;
-            public int acceleration;
-            public int deceleration;
-        }
     }
 }
