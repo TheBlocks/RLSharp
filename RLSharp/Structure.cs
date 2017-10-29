@@ -124,12 +124,12 @@ namespace RLSharp
     public struct GameTickPacket
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
-        public PlayerInfo[] gamecars;
+        public PlayerInfo[] gameCars;
         public int numCars;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
         public BoostInfo[] gameBoosts;
         public int numBoosts;
-        public BallInfo gameball;
+        public BallInfo gameBall;
         public GameInfo gameInfo;
     }
 
