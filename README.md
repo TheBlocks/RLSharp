@@ -16,3 +16,7 @@ Detailed instructions can be found on the RLBot wiki here: https://github.com/dr
 Instructions for injecting RLBot.dll into RocketLeague.exe can be found here: https://github.com/drssoccer55/RLBot/wiki/Injecting-DLL-Instructions.
 
 There are plans to move RLSharp away from vJoy and move towards vXbox so that bot development is less of a hassle.
+
+# Acknowledgements
+* Massive thanks to drssoccer55 (https://github.com/drssoccer55) for creating RLBot. Without RLBot, I wouldn't know where to start with making RLSharp.
+* Another massive thanks to ccman32 (https://github.com/ccman32) for creating RLBot.dll so that game data can be accurately and for helping me with reading the DLL.
