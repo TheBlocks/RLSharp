@@ -70,9 +70,15 @@ namespace RLSharp
         [MarshalAs(UnmanagedType.U1)]
         public bool bDemolished;
         [MarshalAs(UnmanagedType.U1)]
+        public bool bOnGround;
+        [MarshalAs(UnmanagedType.U1)]
         public bool bSuperSonic;
         [MarshalAs(UnmanagedType.U1)]
         public bool bBot;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bJumped;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bDoubleJumped;
         public int PlayerID;
         public byte Team;
         public int Boost;
@@ -104,6 +110,14 @@ namespace RLSharp
         public float GameTimeRemaining;
         [MarshalAs(UnmanagedType.U1)]
         public bool bOverTime;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bUnlimitedTime;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bRoundActive;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bBallHasBeenHit;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bMatchEnded;
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
