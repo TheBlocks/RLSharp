@@ -1,0 +1,98 @@
+﻿using System.Runtime.InteropServices;
+
+namespace RLSharp
+{
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct Vector3
+    {
+        public float X;
+        public float Y;
+        public float Z;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct Rotator
+    {
+        public int Pitch;
+        public int Yaw;
+        public int Roll;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct ScoreInfo
+    {
+        public int Score;
+        public int Goals;
+        public int OwnGoals;
+        public int Assists;
+        public int Saves;
+        public int Shots;
+        public int Demolitions;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct PlayerInfo
+    {
+        public Vector3 Location;
+        public Rotator Rotation;
+        public Vector3 Velocity;
+        public Vector3 AngularVelocity;
+        public ScoreInfo Score;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bDemolished;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bSuperSonic;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bBot;
+        public int PlayerID;
+        public byte Team;
+        public int Boost;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct BallInfo
+    {
+        public Vector3 Location;
+        public Rotator Rotation;
+        public Vector3 Velocity;
+        public Vector3 AngularVelocity;
+        public Vector3 Acceleration;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct BoostInfo
+    {
+        public Vector3 Location;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bActive;
+        public int Timer;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct GameInfo
+    {
+        public float TimeSeconds;
+        public float GameTimeRemaining;
+        [MarshalAs(UnmanagedType.U1)]
+        public bool bOverTime;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct GameTickPacket
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
+        public PlayerInfo[] gamecars;
+        public int numCars;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
+        public BoostInfo[] gameBoosts;
+        public int numBoosts;
+        public BallInfo gameball;
+        public GameInfo gameInfo;
+    }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct SharedInputs
+    {
+        public GameTickPacket GameTickPacket;
+    }
+}
