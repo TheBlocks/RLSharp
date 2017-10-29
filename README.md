@@ -2,8 +2,7 @@
 RLSharp is a framework to create Rocket League bots in .NET languages (C#, Visual Basic, C++, ...).
 
 # Installation
-* Download RLBot.dll on commit 487a268 from the RLBot repository (https://github.com/drssoccer55/RLBot/).
-* Download RLSharp.dll v1.0.0 from the RLSharp releases (https://github.com/TheBlocks/RLSharp/releases/tag/v1.0.0).
+* Download RLSharp.dll and RLBot.dll from the RLSharp releases (https://github.com/TheBlocks/RLSharp/releases/).
 * Install vJoy 2.x by running the setup executable (https://sourceforge.net/projects/vjoystick/files/latest/download).
 * Create a new Visual Studio project and add RLSharp.dll as a reference.
 * Add vJoyInterfaceWrap.dll (found in the vJoy installation directory) as a reference.
